@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Page</title>
+    <style>
+        .container {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 100px;
+        }
+
+        .div {
+            width: 375px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        .div img {
+            width: 250px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        h2{
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .a {
+            width: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        a {
+            margin: 0 auto;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% for car in cars %}
+        <div class="div">
+            <h2>Car Brand: {{car.brand}}</h2>
+            <h2>Car Model: {{car.model}}</h2>
+            <h2>Year of manufacture of the car:{{car.year}}</h2>
+            <h2>Car Color:{{car.color}}</h2>
+            <img src="{{car.photo.url}}" alt="Photo">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="a">
+        <a href="{% url 'home_page' %}">Home Page</a>
+        <a href="{% url 'create_car' %}">Add Car</a>
+    </div>
+</body>
+
+</html>

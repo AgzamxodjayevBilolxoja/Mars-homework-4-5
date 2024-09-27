@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Page</title>
+    <style>
+        .container {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 100px;
+        }
+
+        .div {
+            width: 375px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        h2{
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .a {
+            width: 130px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        a {
+            margin: 0 auto;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% for laptop in laptops %}
+        <div class="div">
+            <h2>Laptop Name: {{laptop.name}}</h2>
+            <h2>Laptop Price: {{laptop.price}}</h2>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="a">
+        <a href="{% url 'home_page' %}">Home Page</a>
+        <a href="{% url 'create_laptop' %}">Add Laptop</a>
+    </div>
+</body>
+
+</html>

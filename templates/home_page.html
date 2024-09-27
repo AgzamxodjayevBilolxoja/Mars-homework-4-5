@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+        body {
+        width: 1000px;
+        margin: 300px auto;
+        display: flex;
+        justify-content: space-between;
+        }
+
+        a {
+        text-decoration:none;
+        color: black;
+        font-size: 25px
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'car_page' %}">Car Page</a>
+    <a href="{% url 'student_page' %}">Student Page</a>
+    <a href="{% url 'laptop_page' %}">Laptop Page</a>
+    <a href="{% url 'animal_page' %}">Animal Page</a>
+    <a href="{% url 'fruit_page' %}">Fruit Page</a>
+    <a href="{% url 'vegetable_page' %}">Vegetable Page</a>
+</body>
+</html>

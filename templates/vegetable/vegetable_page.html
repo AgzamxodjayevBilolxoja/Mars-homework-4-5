@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vegetable Page</title>
+    <style>
+        .container {
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 100px;
+        }
+
+        .div {
+            width: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        h2{
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .a {
+            width: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        a {
+            margin: 0 auto;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% for vegetable in vegetables %}
+        <div class="div">
+            <h2>Vegetable Name: {{vegetable.name}}</h2>
+            <h2>Vegetable Color: {{vegetable.color}}</h2>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="a">
+        <a href="{% url 'home_page' %}">Home Page</a>
+        <a href="{% url 'create_vegetable' %}">Add Vegetable</a>
+    </div>
+</body>
+
+</html>
